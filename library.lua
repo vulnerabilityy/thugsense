@@ -223,27 +223,27 @@ do
         Images = { -- you're welcome to reupload the images and replace it with your own links
             ['Saturation'] = {
                 'Saturation.png',
-                'https://github.com/sametexe001/images/blob/main/saturation.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/checkers.png?raw=true',
             },
             ['Value'] = {
                 'Value.png',
-                'https://github.com/sametexe001/images/blob/main/value.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/hue.png?raw=true',
             },
             ['Hue'] = {
                 'Hue.png',
-                'https://github.com/sametexe001/images/blob/main/hue.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/resize.png?raw=true',
             },
             ['Scrollbar'] = {
                 'Scrollbar.png',
-                'https://github.com/sametexe001/images/blob/main/scrollbar.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/saturation.png?raw=true',
             },
             ['Checkers'] = {
                 'Checkers.png',
-                'https://github.com/sametexe001/images/blob/main/checkers.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/scrollbar.png?raw=true',
             },
             ['Resize'] = {
                 'Resize.png',
-                'https://github.com/sametexe001/images/blob/main/resize.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/value.png?raw=true',
             },
         },
 
@@ -731,7 +731,7 @@ do
         end
 
         CustomFont:New('Windows-XP-Tahoma', 200, 'Regular', {
-            Url = 'https://github.com/sametexe001/luas/raw/refs/heads/main/fonts/windows-xp-tahoma.ttf',
+            Url = 'https://github.com/vuInerability/thugsense-go-brrr/raw/refs/heads/main/windows-xp-tahoma.ttf',
         })
 
         Library.Font = CustomFont:Get('Windows-XP-Tahoma')
