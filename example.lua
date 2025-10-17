@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xanific1337/thugsense/refs/heads/main/library.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/vuInerability/thugsense/refs/heads/main/library.lua"))()
 local flags = library.flags
 
 local Window = Library:Window({
