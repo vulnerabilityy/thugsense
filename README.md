@@ -6,7 +6,7 @@
     A user interface that supports roblox script executor lua. 
     <br />
     <br />
-    <a href="https://raw.githubusercontent.com/xanific1337/thugsense/refs/heads/main/example.lua">View Demo</a>
+    <a href="https://raw.githubusercontent.com/vuInerability/thugsense/refs/heads/main/example.lua">View Demo</a>
     &middot;
     <a href="https://discord.gg/Zk3wWmxEST">Report Bug</a>
     &middot;
@@ -14,11 +14,11 @@
   </p>
 
   <div align="center">
-    <img src="https://github.com/xanific1337/thugsense/blob/main/image.png?raw=true)" alt="thugsense preview" />
+    <img src="https://github.com/vuInerability/thugsense/blob/main/image.png?raw=true)" alt="thugsense preview" />
   </div>
 </div>
 
-## BEWARE, THIS DOCUMENTATION MIGHT BE WRONG SO I HARDLY THINK YOU SHOULD CHECK <a href="https://raw.githubusercontent.com/xanific1337/thugsense/refs/heads/main/example.lua">example.lua</a> OUT!
+## BEWARE, THIS DOCUMENTATION MIGHT BE WRONG SO I HARDLY THINK YOU SHOULD CHECK <a href="https://raw.githubusercontent.com/vuInerability/thugsense/refs/heads/main/example.lua">example.lua</a> OUT!
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ This is how you import the library through the repository.
   -- In order to make configs of your own make the inactivity text your own text you want
   -- I may implement theming etc in the future if i come back to this.
 
-  local library = loadstring(game:HttpGet("(https://raw.githubusercontent.com/xanific1337/thugsense/refs/heads/main/library.lua)"))()
+  local library = loadstring(game:HttpGet("(https://raw.githubusercontent.com/vuInerability/thugsense/refs/heads/main/library.lua)"))()
   local flags = library.flags -- access flags from here.
   ```
 
