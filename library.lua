@@ -223,27 +223,27 @@ do
         Images = { -- you're welcome to reupload the images and replace it with your own links
             ['Saturation'] = {
                 'Saturation.png',
-                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/checkers.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/saturation.png?raw=true',
             },
             ['Value'] = {
                 'Value.png',
-                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/hue.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/value.png?raw=true',
             },
             ['Hue'] = {
                 'Hue.png',
-                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/resize.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/hue.png?raw=true',
             },
             ['Scrollbar'] = {
                 'Scrollbar.png',
-                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/saturation.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/scrollbar.png?raw=true',
             },
             ['Checkers'] = {
                 'Checkers.png',
-                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/scrollbar.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/checkers.png?raw=true?raw=true',
             },
             ['Resize'] = {
                 'Resize.png',
-                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/value.png?raw=true',
+                'https://github.com/vuInerability/thugsense-go-brrr/blob/main/resize.png?raw=true',
             },
         },
 
