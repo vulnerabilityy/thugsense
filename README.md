@@ -282,12 +282,6 @@ This is how you import the library through the repository.
   })
   ```
 
-- Watermark
-
-  ```lua
-  library:Watermark("My Watermark")
-  ```
-
 - Notification
 
   ```lua
