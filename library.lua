@@ -2856,55 +2856,31 @@ local Library do
         local Debounce = false
 
         function SubPage:Turn(Bool)
-            if Debounce then 
-                return 
-            end
+            if Debounce then return end
 
             SubPage.Active = Bool
-
-            Debounce = true 
+            Debounce = true
 
             if Bool then 
                 Items["Subtab"].Instance.Visible = true
-
                 Items["Icon"]:Tween(nil, {ImageColor3 = Library.Theme.Accent, ImageTransparency = 0})
                 Items["Hide"].Instance.Visible = true
-
                 Items["Icon"]:ChangeItemTheme({ImageColor3 = "Accent"})
-
                 Items["Inactive"].Instance.Size = UDim2New(1, 0, 1, 1)
             else
                 Items["Icon"]:Tween(nil, {ImageColor3 = Library.Theme.Text, ImageTransparency = 0.35})
                 Items["Hide"].Instance.Visible = false
-
                 Items["Icon"]:ChangeItemTheme({ImageColor3 = "Text"})
                 Items["Inactive"].Instance.Size = UDim2New(1, 0, 1, -2)
             end
 
-            local Descendants = Items["Subtab"].Instance:GetDescendants()
-            TableInsert(Descendants, Items["Subtab"].Instance)
-
-            local NewTween
-            for Index, Value in Descendants do 
-                local ValueIndex = Library:GetTransparencyPropertyFromItem(Value)
-
-                if not ValueIndex then 
-                    continue
-                end
-
-                if type(ValueIndex) == "table" then
-                    for _, Property in ValueIndex do 
-                        NewTween = Library:FadeItem(Value, Property, Bool, SubPage.Window.FadeSpeed or 0.5)
-                    end
-                else
-                    NewTween = Library:FadeItem(Value, ValueIndex, Bool, SubPage.Window.FadeSpeed or 0.5)
+            for _, obj in Items["Subtab"].Instance:GetDescendants() do
+                if obj:IsA("GuiObject") then
+                    obj.Visible = Bool
                 end
             end
 
-            Library:Connect(NewTween.Tween.Completed, function()
-                Debounce = false
-                Items["Subtab"].Instance.Visible = Bool
-            end)
+            Debounce = false
         end
 
         Items["Inactive"]:Connect("MouseButton1Down", function()
