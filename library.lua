@@ -1,7 +1,7 @@
+-- Thugsense
 --[[
 
     Assign different flags to each element to prevent from configs overriding eachother
-    Example script is at the bottom
 
     Documentation:
     function Library:Window(Data: table
@@ -993,8 +993,17 @@ local Library do
 
         function Watermark:SetVisibility(Bool)
             Items["Watermark"].Instance.Visible = Bool
+			Watermark.Visible = Bool
         end
-        
+
+		function Watermark:SetText(Text)
+            Items["Title"].Instance.Text = Text
+			Watermark.Text = Text
+        end
+
+        Watermark.Text = Items["Title"].Instance.Text
+		Watermark.Visible = Items["Watermark"].Instance.Visible
+
         return Watermark
     end
 
@@ -1886,7 +1895,7 @@ local Library do
                 FontFace = Library.Font,
                 TextColor3 = FromRGB(215, 215, 215),
                 BorderColor3 = FromRGB(0, 0, 0),
-                Text = "MB2",
+                Text = "  ",
                 Name = "\0",
                 BackgroundTransparency = 1,
                 Position = UDim2New(0, 1, 0, 0),
@@ -2063,10 +2072,10 @@ local Library do
             if StringFind(tostring(Key), "Enum") then 
                 Keybind.Key = tostring(Key)
 
-                Key = Key.Name == "Backspace" and "None" or Key.Name
+                Key = Key.Name == "Backspace" and " " or Key.Name
 
-                local KeyString = Keys[Keybind.Key] or StringGSub(Key, "Enum.", "") or "None"
-                local TextToDisplay = StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "None"
+                local KeyString = Keys[Keybind.Key] or StringGSub(Key, "Enum.", "") or "Empty"
+                local TextToDisplay = StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "Empty"
 
                 Keybind.Value = TextToDisplay
                 Items["Text"].Instance.Text = TextToDisplay
@@ -2083,7 +2092,7 @@ local Library do
                     Library:SafeCall(Data.Callback, Keybind.Toggled)
                 end
             elseif type(Key) == "table" then 
-                local RealKey = Key.Key == "Backspace" and "None" or Key.Key
+                local RealKey = Key.Key == "Backspace" and " " or Key.Key
                 Keybind.Key = tostring(Key.Key)
 
                 if Key.Mode then
@@ -2095,7 +2104,7 @@ local Library do
                 end
 
                 local KeyString = Keys[Keybind.Key] or StringGSub(tostring(RealKey), "Enum.", "") or RealKey
-                local TextToDisplay = KeyString and StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "None"
+                local TextToDisplay = KeyString and StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "Empty"
 
                 TextToDisplay = StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "")
 
@@ -2177,7 +2186,8 @@ local Library do
             Items["Text"]:ChangeItemTheme({TextColor3 = "Accent"})
 
             local InputBegan 
-            InputBegan = UserInputService.InputBegan:Connect(function(Input)
+            InputBegan = UserInputService.InputBegan:Connect(function(Input, gp)
+				if gp then return end
                 if Input.UserInputType == Enum.UserInputType.Keyboard then 
                     Keybind:Set(Input.KeyCode)
                 else
@@ -2193,7 +2203,8 @@ local Library do
             Keybind:SetOpen(not Keybind.IsOpen)
         end)
 
-        Library:Connect(UserInputService.InputBegan, function(Input)
+        Library:Connect(UserInputService.InputBegan, function(Input, gp)
+			if gp then return end
             if tostring(Input.KeyCode) == Keybind.Key or tostring(Input.UserInputType) == Keybind.Key then
                 if Keybind.Mode == "Toggle" then 
                     Keybind:Press()
@@ -2412,7 +2423,8 @@ local Library do
             end)
         end
 
-        Library:Connect(UserInputService.InputBegan, function(Input)
+        Library:Connect(UserInputService.InputBegan, function(Input, gp)
+			if gp then return end
             if tostring(Input.KeyCode) == Library.MenuKeybind or tostring(Input.UserInputType) == Library.MenuKeybind then
                 Window:SetOpen(not Window.IsOpen)
             end
@@ -3619,7 +3631,7 @@ local Library do
                 Parent = Items["Toggle"],
                 Name = Data.Name or Data.name or "Keybind",
                 Flag = Data.Flag or Data.flag or Library:NextFlag(),
-                Default = Data.Default or Data.default or "MB2",
+                Default = Data.Default or Data.default or "Empty",
                 Mode = Data.Mode or Data.mode or "Toggle",
                 Callback = Data.Callback or Data.callback or function() end,
             }
@@ -4460,7 +4472,7 @@ local Library do
                 Parent = Items["Label"],
                 Name = Data.Name or Data.name or "Keybind",
                 Flag = Data.Flag or Data.flag or Library:NextFlag(),
-                Default = Data.Default or Data.default or "MB2",
+                Default = Data.Default or Data.default or "Empty",
                 Mode = Data.Mode or Data.mode or "Toggle",
                 Callback = Data.Callback or Data.callback or function() end,
             }
@@ -4894,6 +4906,6 @@ local Library do
         return Listbox
     end
 end
---
+
 getgenv().Library = Library
 return Library
