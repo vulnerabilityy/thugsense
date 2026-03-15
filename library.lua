@@ -760,6 +760,11 @@
         Library.Connect = function(self, Event, Callback, Name)
             Name = Name or StringFormat("Connection_%s_%s", self.UnnamedConnections + 1, HttpService:GenerateGUID(false))
 
+            if typeof(Event) ~= "RBXScriptSignal" and (type(Event) ~= "table" or not Event.Connect) then 
+                warn("Library:Connect failed - invalid event:", Event, debug.traceback())
+                return { Name = Name, Disconnect = function() end }
+            end
+
             local NewConnection = {
                 Event = Event,
                 Callback = Callback,
@@ -3467,7 +3472,7 @@
                 local Extension = Library:CreateColorpicker(Colorpicker)
                 Library.Flags[Colorpicker.Flag] = Extension
 
-                return Colorpicker
+                return Extension, Colorpicker
             end
 
             function Toggle:Keybind(Data)
@@ -3489,7 +3494,7 @@
                 local Extension = Library:CreateKeybind(Keybind)
                 Library.Flags[Keybind.Flag] = Extension
 
-                return Keybind, Extension
+                return Extension, Keybind
             end
 
             Items["Toggle"]:Connect("MouseButton1Down", function()
