@@ -1309,19 +1309,15 @@
 
 
                 Colorpicker.CalculateCount = function(self, Index, YScale, YOffset)
-                    local MaxButtonsAdded = 5
-
-                    local Column = Index % MaxButtonsAdded
-                
-                    local ButtonSize = Items["ColorpickerButton"].Instance.AbsoluteSize
                     local Spacing = 4
-                
-                    local XPosition = (ButtonSize.X + Spacing) * Column - Spacing - 21
+                    local ButtonWidth = 20 -- Default size
+                    
+                    local XPosition = (ButtonWidth + Spacing) * Index + Spacing
                 
                     Items["ColorpickerButton"].Instance.Position = UDim2New(1, -XPosition, YScale or 0.5, YOffset or 0)
                 end
 
-                Colorpicker:CalculateCount(Data.Count)
+                Colorpicker:CalculateCount(Data.Count or 0)
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["ColorpickerButton"].Instance,
@@ -3461,18 +3457,17 @@
                     Default = Data.Default or Data.default or Color3.fromRGB(255, 255, 255),
                     Callback = Data.Callback or Data.callback or function() end,
                     Alpha = Data.Alpha or Data.alpha or false,
-                    Count = Toggle.Count,
-
                     FadeSpeed = self.Window.FadeSpeed
                 }
 
+                local Count = Toggle.Count
                 Toggle.Count += 1
-                Colorpicker.Count = Toggle.Count
+                Colorpicker.Count = Count
 
                 local Extension = Library:CreateColorpicker(Colorpicker)
                 Library.Flags[Colorpicker.Flag] = Extension
 
-                return Extension, Colorpicker
+                return self, Extension
             end
 
             function Toggle:Keybind(Data)
@@ -3494,7 +3489,7 @@
                 local Extension = Library:CreateKeybind(Keybind)
                 Library.Flags[Keybind.Flag] = Extension
 
-                return Extension, Keybind
+                return self, Extension
             end
 
             Items["Toggle"]:Connect("MouseButton1Down", function()
@@ -4304,16 +4299,16 @@
                     Default = Data.Default or Data.default or Color3.fromRGB(255, 255, 255),
                     Callback = Data.Callback or Data.callback or function() end,
                     Alpha = Data.Alpha or Data.alpha or false,
-                    Count = Label.Count,
                     FadeSpeed = self.Window.FadeSpeed
                 }
 
+                local Count = Label.Count
                 Label.Count += 1
-                Colorpicker.Count = Label.Count
+                Colorpicker.Count = Count
 
                 local Extension = Library:CreateColorpicker(Colorpicker)
                 
-                return Colorpicker, Extension
+                return self, Extension
             end
 
             function Label:Keybind(Data)
@@ -4334,7 +4329,7 @@
 
                 local Extension = Library:CreateKeybind(Keybind)
 
-                return Keybind, Extension
+                return self, Extension
             end
 
             return Label
