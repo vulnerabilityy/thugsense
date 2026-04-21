@@ -203,7 +203,7 @@
                 ["Page Background"] = FromRGB(30, 30, 35),
                 ["Border"] = FromRGB(10, 10, 10),
                 ["Outline"] = FromRGB(27, 27, 32),
-                ["Accent"] = FromRGB(235, 157, 255),
+                ["Accent"] = FromHex("#9fb4d9"),
                 ["Element"] = FromRGB(33, 33, 36),
                 ["Hovered Element"] = FromRGB(40, 40, 43),
                 ["Text"] = FromRGB(215, 215, 215),
@@ -219,10 +219,10 @@
             },
 
             Folders = {
-                Directory = "chudvision",
-                Configs = "chudvision/Configs",
-                Assets = "chudvision/Assets",
-                Songs = "chudvision/Songs"
+                Directory = "chudvision.net",
+                Configs = "chudvision.net/Configs",
+                Assets = "chudvision.net/Assets",
+                Songs = "chudvision.net/Songs"
             },
 
             Images = { -- you're welcome to reupload the images and replace it with your own links
