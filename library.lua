@@ -613,14 +613,12 @@
 
         local CustomFont = { } do
             function CustomFont:New(Name, Weight, Style, Data)
-                if isfile(Library.Folders.Assets .. "/" .. Name .. ".json") then
-                    return Font.new(getcustomasset(Library.Folders.Assets .. "/" .. Name .. ".json"))
-                end
-
+                -- Always download .ttf if missing
                 if not isfile(Library.Folders.Assets .. "/" .. Name .. ".ttf") then 
                     writefile(Library.Folders.Assets .. "/" .. Name .. ".ttf", game:HttpGet(Data.Url))
                 end
 
+                -- Always regenerate .json with fresh getcustomasset URL
                 local FontData = {
                     name = Name,
                     faces = { {
