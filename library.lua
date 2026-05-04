@@ -866,10 +866,10 @@
             local CurrentList = { }
             local List = { }
 
-            local ConfigFolderName = StringGSub(Library.Folders.Configs, Library.Folders.Directory .. "/", "")
-
             for Index, Value in listfiles(Library.Folders.Configs) do
-                local FileName = StringGSub(Value, Library.Folders.Directory .. "\\" .. ConfigFolderName .. "\\", "")
+                -- Extract just the filename from the end of the path
+                -- Handles both forward slashes and backslashes from any executor
+                local FileName = Value:match("[/\\]([^/\\]+)$") or Value
                 TableInsert(List, FileName)
             end
 
