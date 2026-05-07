@@ -418,6 +418,7 @@
 
                 if Class == "TextLabel" or Class == "TextButton" or Class == "TextBox" then
                     NewItem.Instance.RichText = true
+                    NewItem.Instance.Text = ""
                 end
 
                 for Property, Value in NewItem.Properties do
@@ -613,12 +614,10 @@
 
         local CustomFont = { } do
             function CustomFont:New(Name, Weight, Style, Data)
-                -- Always download .ttf if missing
                 if not isfile(Library.Folders.Assets .. "/" .. Name .. ".ttf") then 
                     writefile(Library.Folders.Assets .. "/" .. Name .. ".ttf", game:HttpGet(Data.Url))
                 end
 
-                -- Always regenerate .json with fresh getcustomasset URL
                 local FontData = {
                     name = Name,
                     faces = { {
@@ -867,8 +866,6 @@
             local List = { }
 
             for Index, Value in listfiles(Library.Folders.Configs) do
-                -- Extract just the filename from the end of the path
-                -- Handles both forward slashes and backslashes from any executor
                 local FileName = Value:match("[/\\]([^/\\]+)$") or Value
                 TableInsert(List, FileName)
             end
@@ -1308,7 +1305,7 @@
 
                 Colorpicker.CalculateCount = function(self, Index, YScale, YOffset)
                     local Spacing = 4
-                    local ButtonWidth = 20 -- Default size
+                    local ButtonWidth = 20
                     
                     local XPosition = (ButtonWidth + Spacing) * Index + Spacing
                 
@@ -4823,18 +4820,3 @@
 
     getgenv().Library = Library
     return Library
-
---[[
-Example of using RichText:
-
-local Window = Library:CreateWindow({
-    Title = "Thug<font color='#ff0000'>sense</font>",
-    Theme = "Default"
-})
-
-local Page = Window:CreatePage("Main")
-local Section = Page:CreateSection("Information")
-
-Section:CreateLabel("Welcome to <font color='#55aaff'>Thugsense</font>!")
-Section:CreateLabel("Current Version: <font color='#ffff00'>1.0.0</font>")
-]]
