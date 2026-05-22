@@ -854,7 +854,6 @@
             end)
 
             local Success, Result = Library:SafeCall(function()
-                -- Pass 1: Apply colorpickers first so theme colors (Accent, etc.) are current
                 for Index, Value in Decoded do 
                     if type(Value) == "table" and Value.Color then
                         local SetFunction = Library.SetFlags[Index]
@@ -864,7 +863,6 @@
                     end
                 end
 
-                -- Pass 2: Apply everything else (toggles, sliders, keybinds, dropdowns, textboxes)
                 for Index, Value in Decoded do 
                     if type(Value) == "table" and Value.Color then
                         continue
