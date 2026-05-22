@@ -234,7 +234,6 @@
                 ["Resize"] = { "Resize.png", "https://github.com/sametexe001/images/blob/main/resize.png?raw=true" },
             },
 
-            -- Ignore below
             Pages = { },
             Sections = { },
             Connections = { },
@@ -281,10 +280,17 @@
             ["Comma"]             = ",",
             ["Minus"]             = "-",
             ["Period"]            = ".",
-            ["Slash"]             = "`",
+            ["Slash"]             = "/",
+            ["Zero"]              = "0",
+            ["One"]               = "1",
+            ["Two"]               = "2",
             ["Three"]             = "3",
+            ["Four"]              = "4",
+            ["Five"]              = "5",
+            ["Six"]               = "6",
             ["Seven"]             = "7",
             ["Eight"]             = "8",
+            ["Nine"]              = "9",
             ["Colon"]             = ":",
             ["Semicolon"]         = ";",
             ["LessThan"]          = "<",
@@ -293,7 +299,7 @@
             ["Equals"]            = "=",
             ["At"]                = "@",
             ["LeftBracket"]       = "LeftBracket",
-            ["RightBracket"]      = "RightBracked",
+            ["RightBracket"]      = "RightBracket",
             ["BackSlash"]         = "BackSlash",
             ["Caret"]             = "^",
             ["Underscore"]        = "_",
@@ -314,13 +320,13 @@
             ["KeypadSeven"]       = "Keypad7",
             ["KeypadEight"]       = "Keypad8",
             ["KeypadNine"]        = "Keypad9",
-            ["KeypadPeriod"]      = "KeypadP",
-            ["KeypadDivide"]      = "KeypadD",
-            ["KeypadMultiply"]    = "KeypadM",
-            ["KeypadMinus"]       = "KeypadM",
-            ["KeypadPlus"]        = "KeypadP",
-            ["KeypadEnter"]       = "KeypadE",
-            ["KeypadEquals"]      = "KeypadE",
+            ["KeypadPeriod"]      = "KP.",
+            ["KeypadDivide"]      = "KP/",
+            ["KeypadMultiply"]    = "KP*",
+            ["KeypadMinus"]       = "KP-",
+            ["KeypadPlus"]        = "KP+",
+            ["KeypadEnter"]       = "KPEnter",
+            ["KeypadEquals"]      = "KP=",
             ["Insert"]            = "Insert",
             ["Home"]              = "Home",
             ["PageUp"]            = "PageUp",
@@ -399,8 +405,8 @@
                     return
                 end
 
-                Tween:Pause()
-                self = nil
+                self:Pause()
+                self.Tween = nil
             end
         end
 
@@ -825,6 +831,27 @@
 
         Library.LoadConfig = function(self, Config)
             local Decoded = HttpService:JSONDecode(Config)
+
+            Library:SafeCall(function()
+                for Flag, SetFunction in Library.SetFlags do
+                    if Decoded[Flag] == nil then
+                        local CurrentValue = Library.Flags[Flag]
+                        if type(CurrentValue) == "boolean" then
+                            SetFunction(false)
+                        elseif type(CurrentValue) == "number" then
+                            SetFunction(0)
+                        elseif type(CurrentValue) == "string" then
+                            SetFunction("")
+                        elseif type(CurrentValue) == "table" then
+                            if CurrentValue.Color then
+                                SetFunction("#FFFFFF", 0)
+                            elseif CurrentValue.Key then
+                                SetFunction({Key = "Enum.KeyCode.Backspace", Mode = "Toggle"})
+                            end
+                        end
+                    end
+                end
+            end)
 
             local Success, Result = Library:SafeCall(function()
                 for Index, Value in Decoded do 
@@ -1603,8 +1630,8 @@
 
             function Colorpicker:Set(Color, Alpha)
                 if type(Color) == "table" then 
-                    Color = FromRGB(Color[1], Color[2], Color[3])
                     Alpha = Color[4]
+                    Color = FromRGB(Color[1], Color[2], Color[3])
                 elseif type(Color) == "string" then 
                     Color = FromHex(Color)
                 end
@@ -2334,7 +2361,7 @@
 
             Library:Connect(UserInputService.InputBegan, LPH_NO_VIRTUALIZE(function(Input, gp)
                 if gp then return end
-                if tostring(Input.KeyCode) == Library.MenuKeybind or tostring(Input.UserInputType) == Library.MenuKeybind then
+                if tostring(Input.KeyCode) == tostring(Library.MenuKeybind) or tostring(Input.UserInputType) == tostring(Library.MenuKeybind) then
                     Window:SetOpen(not Window.IsOpen)
                 end
             end))
