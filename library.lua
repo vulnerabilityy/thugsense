@@ -969,7 +969,7 @@
 
                         Parent = Items["Watermark"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -1061,7 +1061,7 @@
 
                         Parent = Items["Notification"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -1203,7 +1203,7 @@
 
                         Parent = Items["KeybindList"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -1407,7 +1407,7 @@
 
                         Parent = Items["ColorpickerWindow"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -1897,7 +1897,7 @@
 
                         Parent = Items["KeyButton"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -1957,7 +1957,7 @@
 
                         Parent = Items["Window"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -2358,7 +2358,7 @@
                 
                 Instances:Create("UICorner", {
                     Parent = Items["Inline"].Instance,
-                    CornerRadius = UDimNew(0, 4)
+                    CornerRadius = UDimNew(0, 2)
                 })
                 
                 Instances:Create("UIStroke", {
@@ -2402,7 +2402,7 @@
 
                         Parent = Items["Content"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
             
@@ -2483,7 +2483,7 @@
 
                         Parent = Items["Inactive"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -2524,7 +2524,7 @@
                     AnchorPoint = Vector2New(0, 1),
                     Name = "\0",
                     Position = UDim2New(0, 0, 1, 0),
-                    Size = UDim2New(1, 0, 0, 3),
+                    Size = UDim2New(1, 0, 0, 4),
                     ZIndex = 2,
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(15, 15, 20)
@@ -2629,7 +2629,7 @@
 
                             Parent = Items["Columns"].Instance,
 
-                            CornerRadius = UDimNew(0, 4)
+                            CornerRadius = UDimNew(0, 2)
 
                         })
 
@@ -2735,7 +2735,7 @@
 
                         Parent = Items["Inactive"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -2944,7 +2944,7 @@
 
                         Parent = Items["Section"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -3048,7 +3048,7 @@
 
                         Parent = Items["MultiSection"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -3142,7 +3142,7 @@
 
                             Parent = SubItems["Inactive"].Instance,
 
-                            CornerRadius = UDimNew(0, 4)
+                            CornerRadius = UDimNew(0, 2)
 
                         })
 
@@ -3175,7 +3175,7 @@
                         AnchorPoint = Vector2New(0, 1),
                         Name = "\0",
                         Position = UDim2New(0, 0, 1, 0),
-                        Size = UDim2New(1, 0, 0, 3),
+                        Size = UDim2New(1, 0, 0, 4),
                         ZIndex = 2,
                         BorderSizePixel = 0,
                         BackgroundColor3 = FromRGB(15, 15, 20)
@@ -3315,7 +3315,7 @@
 
                         Parent = Items["Section"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -3437,7 +3437,7 @@
                     BackgroundTransparency = 1,
                     Name = "\0",
                     BorderColor3 = FromRGB(0, 0, 0),
-                    Size = UDim2New(1, 0, 0, 10),
+                    Size = UDim2New(1, 0, 0, 12),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(255, 255, 255)
                 }) 
@@ -3448,19 +3448,10 @@
                     Name = "\0",
                     Position = UDim2New(0, 0, 0.5, 0),
                     BorderColor3 = FromRGB(10, 10, 10),
-                    Size = UDim2New(1, 0, 0, 3),
+                    Size = UDim2New(1, 0, 0, 4),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["RealDivider"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["RealDivider"].Instance,
-
-                        CornerRadius = UDimNew(0, 4)
-
-                    })
-
                 Instances:Create("UIStroke", {
                     Parent = Items["RealDivider"].Instance,
                     Color = FromRGB(27, 27, 32),
@@ -3515,19 +3506,15 @@
                     Parent = Items["Toggle"].Instance,
                     Name = "\0",
                     BorderColor3 = FromRGB(10, 10, 10),
-                    Size = UDim2New(0, 10, 0, 10),
+                    Size = UDim2New(0, 10.5, 0, 10.5),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["Indicator"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Indicator"].Instance,
-
-                        CornerRadius = UDimNew(0, 4)
-
-                    })
                 
+                Instances:Create("UICorner", {
+                    Parent = Items["Indicator"].Instance,
+                    CornerRadius = UDimNew(0, 2)
+                })
                 Instances:Create("UIStroke", {
                     Parent = Items["Indicator"].Instance,
                     ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
@@ -3550,7 +3537,7 @@
                     Text = Toggle.Name,
                     Name = "\0",
                     Size = UDim2New(1, 0, 1, 0),
-                    Position = UDim2New(0, 18, 0, -1),
+                    Position = UDim2New(0, 19, 0, -1),
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     BorderSizePixel = 0,
@@ -3707,7 +3694,7 @@
 
                         Parent = Items["Button"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -3850,19 +3837,15 @@
                     BorderColor3 = FromRGB(10, 10, 10),
                     Text = "",
                     AutoButtonColor = false,
-                    Size = UDim2New(1, 0, 0, 10),
+                    Size = UDim2New(1, 0, 0, 12),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["RealSlider"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
 
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["RealSlider"].Instance,
-
-                        CornerRadius = UDimNew(0, 4)
-
-                    })
-                
+                Instances:Create("UICorner", {
+                    Parent = Items["RealSlider"].Instance,
+                    CornerRadius = UDimNew(0, 2)
+                })
                 Instances:Create("UIStroke", {
                     Parent = Items["RealSlider"].Instance,
                     ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
@@ -3885,6 +3868,11 @@
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(235, 157, 255)
                 })  Items["Indicator"]:AddToTheme({BackgroundColor3 = "Accent"})
+
+                Instances:Create("UICorner", {
+                    Parent = Items["Indicator"].Instance,
+                    CornerRadius = UDimNew(0, 2)
+                })
                 
                 Instances:Create("UIGradient", {
                     Parent = Items["Indicator"].Instance,
@@ -4067,7 +4055,7 @@
 
                         Parent = Items["RealDropdown"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -4147,7 +4135,7 @@
 
                         Parent = Items["OptionHolder"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -4603,7 +4591,7 @@
 
                         Parent = Items["Background"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -4825,7 +4813,7 @@
 
                         Parent = Items["RealListbox"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
