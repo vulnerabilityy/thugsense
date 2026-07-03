@@ -969,7 +969,7 @@
 
                         Parent = Items["Watermark"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -1061,7 +1061,7 @@
 
                         Parent = Items["Notification"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -1203,7 +1203,7 @@
 
                         Parent = Items["KeybindList"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -1407,7 +1407,7 @@
 
                         Parent = Items["ColorpickerWindow"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -1897,7 +1897,7 @@
 
                         Parent = Items["KeyButton"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -1957,7 +1957,7 @@
 
                         Parent = Items["Window"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -2358,7 +2358,7 @@
                 
                 Instances:Create("UICorner", {
                     Parent = Items["Inline"].Instance,
-                    CornerRadius = UDimNew(0, 4)
+                    CornerRadius = UDimNew(0, 2)
                 })
                 
                 Instances:Create("UIStroke", {
@@ -2402,7 +2402,7 @@
 
                         Parent = Items["Content"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
             
@@ -2483,7 +2483,7 @@
 
                         Parent = Items["Inactive"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -2629,7 +2629,7 @@
 
                             Parent = Items["Columns"].Instance,
 
-                            CornerRadius = UDimNew(0, 4)
+                            CornerRadius = UDimNew(0, 2)
 
                         })
 
@@ -2735,7 +2735,7 @@
 
                         Parent = Items["Inactive"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -2944,7 +2944,7 @@
 
                         Parent = Items["Section"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -3048,7 +3048,7 @@
 
                         Parent = Items["MultiSection"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -3142,7 +3142,7 @@
 
                             Parent = SubItems["Inactive"].Instance,
 
-                            CornerRadius = UDimNew(0, 4)
+                            CornerRadius = UDimNew(0, 2)
 
                         })
 
@@ -3315,7 +3315,7 @@
 
                         Parent = Items["Section"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -3457,7 +3457,7 @@
 
                         Parent = Items["RealDivider"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -3524,7 +3524,7 @@
 
                         Parent = Items["Indicator"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -3707,7 +3707,7 @@
 
                         Parent = Items["Button"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
 
@@ -3859,7 +3859,7 @@
 
                         Parent = Items["RealSlider"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -4067,7 +4067,7 @@
 
                         Parent = Items["RealDropdown"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -4147,7 +4147,7 @@
 
                         Parent = Items["OptionHolder"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -4603,7 +4603,7 @@
 
                         Parent = Items["Background"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
@@ -4825,7 +4825,7 @@
 
                         Parent = Items["RealListbox"].Instance,
 
-                        CornerRadius = UDimNew(0, 4)
+                        CornerRadius = UDimNew(0, 2)
 
                     })
                 
