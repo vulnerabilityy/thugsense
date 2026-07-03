@@ -3452,15 +3452,6 @@
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["RealDivider"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["RealDivider"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
-
                 Instances:Create("UIStroke", {
                     Parent = Items["RealDivider"].Instance,
                     Color = FromRGB(27, 27, 32),
@@ -3518,16 +3509,7 @@
                     Size = UDim2New(0, 10, 0, 10),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(33, 33, 36)
-                })  Items["Indicator"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Indicator"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
-                
+                })  Items["Indicator"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})                
                 Instances:Create("UIStroke", {
                     Parent = Items["Indicator"].Instance,
                     ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
@@ -3853,16 +3835,7 @@
                     Size = UDim2New(1, 0, 0, 10),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(33, 33, 36)
-                })  Items["RealSlider"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["RealSlider"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
-                
+                })  Items["RealSlider"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})                
                 Instances:Create("UIStroke", {
                     Parent = Items["RealSlider"].Instance,
                     ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
