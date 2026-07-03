@@ -444,7 +444,7 @@
                     Parent = Item,
                     Color = Library.Theme.Border,
                     Thickness = 1,
-                    LineJoinMode = Enum.LineJoinMode.Round
+                    LineJoinMode = Enum.LineJoinMode.Miter
                 })
 
                 UIStroke:AddToTheme({Color = "Border"})
@@ -960,25 +960,17 @@
                     Name = "\0",
                     Position = UDim2New(0, 15, 0, 15),
                     BorderColor3 = FromRGB(10, 10, 10),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     AutomaticSize = Enum.AutomaticSize.X,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["Watermark"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Watermark"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
 
                 Items["Watermark"]:MakeDraggable()
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Watermark"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1008,7 +1000,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Title"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -1052,23 +1044,15 @@
                     Name = "\0",
                     Size = UDim2New(0, 0, 0, 22),
                     BorderColor3 = FromRGB(10, 10, 10),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     AutomaticSize = Enum.AutomaticSize.X,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["Notification"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Notification"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Notification"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"}) 
@@ -1098,7 +1082,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Title"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
 
@@ -1194,25 +1178,17 @@
                     Name = "\0",
                     Position = UDim2New(0, 15, 0.5, 0),
                     Size = UDim2New(0, 0, 0, 18),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     AutomaticSize = Enum.AutomaticSize.XY,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["KeybindList"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["KeybindList"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
 
                 Items["KeybindList"]:MakeDraggable()
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["KeybindList"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1259,7 +1235,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Title"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -1300,7 +1276,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = NewKey.Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
             
@@ -1378,8 +1354,8 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["ColorpickerButton"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1399,25 +1375,17 @@
                     BorderColor3 = FromRGB(10, 10, 10),
                     Visible = false,
                     Size = UDim2New(0, 238, 0, 224),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["ColorpickerWindow"]:AddToTheme({BackgroundColor3 = "Background"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["ColorpickerWindow"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
                 
                 Items["ColorpickerWindow"]:MakeDraggable()
                 Items["ColorpickerWindow"]:MakeResizeable(Vector2New(200, 180), Vector2New(9999, 9999))
 
                 Instances:Create("UIStroke", {
                     Parent = Items["ColorpickerWindow"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1440,7 +1408,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Title"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -1507,8 +1475,8 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Palette"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1524,8 +1492,8 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["PaletteDragger"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1554,16 +1522,16 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["HueDragger"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Hue"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1586,8 +1554,8 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Alpha"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1625,8 +1593,8 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["AlphaDragger"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1887,19 +1855,11 @@
                     Size = UDim2New(0, 0, 1, 1),
                     Name = "\0",
                     Position = UDim2New(1, 0, 0, 0),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     AutomaticSize = Enum.AutomaticSize.X,
                     TextSize = 14,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["KeyButton"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Outline"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["KeyButton"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
 
                 if Library.KeyList then 
                     KeyListItem = Library.KeyList:Add(Keybind.Mode, Data.Name, Keybind.Value)
@@ -1907,8 +1867,8 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["KeyButton"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(10, 10, 10)
                 }):AddToTheme({Color = "Border"})
@@ -1930,7 +1890,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -1948,23 +1908,15 @@
                     Name = "\0",
                     Position = UDim2New(1, 0, 1, 5),
                     Size = UDim2New(0, 50, 0, 48),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     Visible = false,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["Window"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Window"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Window"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -1987,7 +1939,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Toggle"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -2009,7 +1961,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Hold"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -2031,7 +1983,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Always"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
             end
@@ -2302,14 +2254,9 @@
                     Position = UDim2New(0, 0, 0, 0),
                     BorderColor3 = FromRGB(10, 10, 10),
                     Size = Window.Size,
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["MainFrame"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-                
-                Instances:Create("UICorner", {
-                    Parent = Items["MainFrame"].Instance,
-                    CornerRadius = UDimNew(0, 6)
-                })
 
                 Items["MainFrame"].Instance.Position = UDim2New(0, Camera.ViewportSize.X / 4, 0, Camera.ViewportSize.Y / 4)
 
@@ -2318,8 +2265,8 @@
                 
                 Items["AccentBorder"] = Instances:Create("UIStroke", {
                     Parent = Items["MainFrame"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(235, 157, 255)
                 })  Items["AccentBorder"]:AddToTheme({Color = "Accent"})
@@ -2342,7 +2289,7 @@
 
                 Instances:Create("UIStroke", {
                     Parent = Items["Title"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -2352,19 +2299,14 @@
                     Position = UDim2New(0, 7, 0, 20),
                     BorderColor3 = FromRGB(27, 27, 32),
                     Size = UDim2New(1, -14, 1, -27),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(20, 20, 25)
                 })  Items["Inline"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Outline"})
                 
-                Instances:Create("UICorner", {
-                    Parent = Items["Inline"].Instance,
-                    CornerRadius = UDimNew(0, 2)
-                })
-                
                 Instances:Create("UIStroke", {
                     Parent = Items["Inline"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
                     Color = Library.Theme.Border,
                     Name = "\0"
                 }):AddToTheme({Color = "Border"})
@@ -2394,22 +2336,14 @@
                     Position = UDim2New(0, 7, 0, 26),
                     BorderColor3 = FromRGB(10, 10, 10),
                     Size = UDim2New(1, -14, 1, -33),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["Content"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Content"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
             
                 Instances:Create("UIStroke", {
                     Parent = Items["Content"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
                     Color = Library.Theme.Outline,
                     Name = "\0"
                 }):AddToTheme({Color = "Outline"})
@@ -2474,23 +2408,15 @@
                     AutoButtonColor = false,
                     Name = "\0",
                     Size = UDim2New(1, 0, 1, 0),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     TextSize = 14,
                     BackgroundColor3 = FromRGB(30, 30, 35)
                 })  Items["Inactive"]:AddToTheme({BackgroundColor3 = "Page Background", BorderColor3 = "Border"})
 
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Inactive"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
-
                 Instances:Create("UIStroke", {
                     Parent = Items["Inactive"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
                     Color = Library.Theme.Outline,
                     Name = "\0"
                 }):AddToTheme({Color = "Outline"})
@@ -2513,7 +2439,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -2524,7 +2450,7 @@
                     AnchorPoint = Vector2New(0, 1),
                     Name = "\0",
                     Position = UDim2New(0, 0, 1, 0),
-                    Size = UDim2New(1, 0, 0, 4),
+                    Size = UDim2New(1, 0, 0, 3),
                     ZIndex = 2,
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(15, 15, 20)
@@ -2621,17 +2547,9 @@
                         Position = UDim2New(0, 7, 0, 45),
                         BorderColor3 = FromRGB(10, 10, 10),
                         Size = UDim2New(1, -14, 1, -52),
-                        BorderSizePixel = 0,
+                        BorderSizePixel = 2,
                         BackgroundColor3 = FromRGB(15, 15, 20)
                     })  Items["Columns"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                        Instances:Create("UICorner", {
-
-                            Parent = Items["Columns"].Instance,
-
-                            CornerRadius = UDimNew(0, 2)
-
-                        })
 
                     Items["SubTabs"] = Instances:Create("Frame", {
                         Parent = Items["Page"].Instance,
@@ -2726,23 +2644,15 @@
                     AutoButtonColor = false,
                     Name = "\0",
                     Size = UDim2New(1, 0, 1, -2),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     TextSize = 14,
                     BackgroundColor3 = FromRGB(30, 30, 35)
                 })  Items["Inactive"]:AddToTheme({BackgroundColor3 = "Page Background", BorderColor3 = "Border"})
 
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Inactive"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
-
                 Instances:Create("UIStroke", {
                     Parent = Items["Inactive"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -2833,7 +2743,7 @@
                     Parent = Items["Subtab"].Instance,
                     Color = FromRGB(27, 27, 32),
                     Name = "\0",
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border
                 }):AddToTheme({Color = "Outline"})
 
                 for Index = 1, SubPage.Columns do
@@ -2935,24 +2845,16 @@
                     Name = "\0",
                     Size = UDim2New(1, 0, 0, 25),
                     BorderColor3 = FromRGB(27, 27, 32),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     AutomaticSize = Enum.AutomaticSize.Y,
                     BackgroundColor3 = FromRGB(20, 20, 25)
                 })  Items["Section"]:AddToTheme({BackgroundColor3 = "Inline", BorderColor3 = "Outline"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Section"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Section"].Instance,
                     Color = FromRGB(10, 10, 10),
                     Name = "\0",
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border
                 }):AddToTheme({Color = "Border"})
                 
                 Instances:Create("UIPadding", {
@@ -2993,7 +2895,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -3039,24 +2941,16 @@
                     Name = "\0",
                     Size = UDim2New(1, 0, 0, 25),
                     BorderColor3 = FromRGB(27, 27, 32),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     AutomaticSize = Enum.AutomaticSize.Y,
                     BackgroundColor3 = FromRGB(20, 20, 25)
                 })  Items["MultiSection"]:AddToTheme({BackgroundColor3 = "Inline", BorderColor3 = "Outline"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["MultiSection"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["MultiSection"].Instance,
                     Color = FromRGB(10, 10, 10),
                     Name = "\0",
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border
                 }):AddToTheme({Color = "Border"})
                 
                 Instances:Create("UIPadding", {
@@ -3133,18 +3027,10 @@
                         AutoButtonColor = false,
                         Name = "\0",
                         Size = UDim2New(1, 0, 1, 0),
-                        BorderSizePixel = 0,
+                        BorderSizePixel = 2,
                         TextSize = 14,
                         BackgroundColor3 = FromRGB(30, 30, 35)
                     })  SubItems["Inactive"]:AddToTheme({BackgroundColor3 = "Page Background", BorderColor3 = "Border"})
-
-                        Instances:Create("UICorner", {
-
-                            Parent = SubItems["Inactive"].Instance,
-
-                            CornerRadius = UDimNew(0, 2)
-
-                        })
 
                     SubItems["Text"] = Instances:Create("TextLabel", {
                         Parent = SubItems["Inactive"].Instance,
@@ -3164,7 +3050,7 @@
 
                     Instances:Create("UIStroke", {
                         Parent = SubItems["Text"].Instance,
-                        LineJoinMode = Enum.LineJoinMode.Round,
+                        LineJoinMode = Enum.LineJoinMode.Miter,
                         Name = "\0"
                     }):AddToTheme({Color = "Text Border"})
 
@@ -3175,7 +3061,7 @@
                         AnchorPoint = Vector2New(0, 1),
                         Name = "\0",
                         Position = UDim2New(0, 0, 1, 0),
-                        Size = UDim2New(1, 0, 0, 4),
+                        Size = UDim2New(1, 0, 0, 3),
                         ZIndex = 2,
                         BorderSizePixel = 0,
                         BackgroundColor3 = FromRGB(15, 15, 20)
@@ -3206,8 +3092,8 @@
 
                     Instances:Create("UIStroke", {
                         Parent = SubItems["Inactive"].Instance,
-                        ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                        LineJoinMode = Enum.LineJoinMode.Round,
+                        ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                        LineJoinMode = Enum.LineJoinMode.Miter,
                         Name = "\0",
                         Color = FromRGB(27, 27, 32)
                     }):AddToTheme({Color = "Outline"})
@@ -3306,18 +3192,10 @@
                     Name = "\0",
                     Size = UDim2New(1, 0, 0, Section.Size),
                     BorderColor3 = FromRGB(27, 27, 32),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     AutomaticSize = Enum.AutomaticSize.Y,
                     BackgroundColor3 = FromRGB(20, 20, 25)
                 })  Items["Section"]:AddToTheme({BackgroundColor3 = "Inline", BorderColor3 = "Outline"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Section"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
 
                 Items["Fade"] = Instances:Create("Frame", {
                     Parent = Items["Section"].Instance,
@@ -3340,7 +3218,7 @@
                     Parent = Items["Section"].Instance,
                     Color = FromRGB(10, 10, 10),
                     Name = "\0",
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border
                 }):AddToTheme({Color = "Border"})
                 
                 Instances:Create("UIPadding", {
@@ -3381,7 +3259,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -3437,7 +3315,7 @@
                     BackgroundTransparency = 1,
                     Name = "\0",
                     BorderColor3 = FromRGB(0, 0, 0),
-                    Size = UDim2New(1, 0, 0, 12),
+                    Size = UDim2New(1, 0, 0, 10),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(255, 255, 255)
                 }) 
@@ -3448,15 +3326,16 @@
                     Name = "\0",
                     Position = UDim2New(0, 0, 0.5, 0),
                     BorderColor3 = FromRGB(10, 10, 10),
-                    Size = UDim2New(1, 0, 0, 4),
-                    BorderSizePixel = 0,
+                    Size = UDim2New(1, 0, 0, 3),
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["RealDivider"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
+
                 Instances:Create("UIStroke", {
                     Parent = Items["RealDivider"].Instance,
                     Color = FromRGB(27, 27, 32),
                     Name = "\0",
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border
                 }):AddToTheme({Color = "Outline"})
             end
             
@@ -3506,19 +3385,15 @@
                     Parent = Items["Toggle"].Instance,
                     Name = "\0",
                     BorderColor3 = FromRGB(10, 10, 10),
-                    Size = UDim2New(0, 10.5, 0, 10.5),
-                    BorderSizePixel = 0,
+                    Size = UDim2New(0, 10, 0, 10),
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["Indicator"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})
                 
-                Instances:Create("UICorner", {
-                    Parent = Items["Indicator"].Instance,
-                    CornerRadius = UDimNew(0, 2.1)
-                })
                 Instances:Create("UIStroke", {
                     Parent = Items["Indicator"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -3537,7 +3412,7 @@
                     Text = Toggle.Name,
                     Name = "\0",
                     Size = UDim2New(1, 0, 1, 0),
-                    Position = UDim2New(0, 19, 0, -1),
+                    Position = UDim2New(0, 18, 0, -1),
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     BorderSizePixel = 0,
@@ -3548,7 +3423,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
 
@@ -3686,17 +3561,9 @@
                     Position = UDim2New(0, 0, 1, 0),
                     Size = UDim2New(1, 0, 0, 17),
                     Selectable = false,
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["Button"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Button"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
 
                 Instances:Create("UIGradient", {
                     Parent = Items["Button"].Instance,
@@ -3706,8 +3573,8 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Button"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"}) 
@@ -3730,7 +3597,7 @@
                 
                 Items["TextBorder"] = Instances:Create("UIStroke", {
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
 
@@ -3825,7 +3692,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -3837,19 +3704,15 @@
                     BorderColor3 = FromRGB(10, 10, 10),
                     Text = "",
                     AutoButtonColor = false,
-                    Size = UDim2New(1, 0, 0, 12),
-                    BorderSizePixel = 0,
+                    Size = UDim2New(1, 0, 0, 10),
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["RealSlider"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                Instances:Create("UICorner", {
-                    Parent = Items["RealSlider"].Instance,
-                    CornerRadius = UDimNew(0, 2)
-                })
+                
                 Instances:Create("UIStroke", {
                     Parent = Items["RealSlider"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -3868,11 +3731,6 @@
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(235, 157, 255)
                 })  Items["Indicator"]:AddToTheme({BackgroundColor3 = "Accent"})
-
-                Instances:Create("UICorner", {
-                    Parent = Items["Indicator"].Instance,
-                    CornerRadius = UDimNew(0, 2)
-                })
                 
                 Instances:Create("UIGradient", {
                     Parent = Items["Indicator"].Instance,
@@ -3897,7 +3755,7 @@
 
                 Instances:Create("UIStroke", {
                     Parent = Items["Value"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
 
@@ -4036,7 +3894,7 @@
 
                 Instances:Create("UIStroke", {
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -4047,17 +3905,9 @@
                     Position = UDim2New(0, 0, 1, 0),
                     BorderColor3 = FromRGB(10, 10, 10),
                     Size = UDim2New(1, 0, 0, 17),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["RealDropdown"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["RealDropdown"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
                 
                 Instances:Create("UIGradient", {
                     Parent = Items["RealDropdown"].Instance,
@@ -4067,8 +3917,8 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["RealDropdown"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -4092,7 +3942,7 @@
 
                 Instances:Create("UIStroke", {
                     Parent = Items["Open"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"}) 
                 
@@ -4115,7 +3965,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Value"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -4126,23 +3976,15 @@
                     Name = "\0",
                     Position = UDim2New(0, 0, 1, 5),
                     Size = UDim2New(1, 0, 0, 0),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     AutomaticSize = Enum.AutomaticSize.Y,
                     BackgroundColor3 = FromRGB(20, 20, 25)
                 })  Items["OptionHolder"]:AddToTheme({BackgroundColor3 = "Inline", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["OptionHolder"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["OptionHolder"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -4266,7 +4108,7 @@
 
                 Instances:Create("UIStroke", {
                     Parent = OptionText.Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
 
@@ -4472,7 +4314,7 @@
                 Instances:Create("UIStroke", {
                     ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                 }):AddToTheme({Color = "Text Border"})
             end
 
@@ -4572,7 +4414,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
                 
@@ -4583,17 +4425,9 @@
                     Position = UDim2New(0, 0, 1, 0),
                     BorderColor3 = FromRGB(10, 10, 10),
                     Size = UDim2New(1, 0, 0, 17),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["Background"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["Background"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
                 
                 Instances:Create("UIGradient", {
                     Parent = Items["Background"].Instance,
@@ -4603,8 +4437,8 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Background"].Instance,
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0",
                     Color = FromRGB(27, 27, 32)
                 }):AddToTheme({Color = "Outline"})
@@ -4635,7 +4469,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Inline"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
 
@@ -4741,7 +4575,7 @@
                 Instances:Create("UIStroke", {
                     ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
                     Parent = Items["Text"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                 }):AddToTheme({Color = "Text Border"})
             end
 
@@ -4805,23 +4639,15 @@
                     Position = UDim2New(0, 0, 1, 0),
                     BackgroundColor3 = FromRGB(15, 15, 20),
                     BorderColor3 = FromRGB(10, 10, 10),
-                    BorderSizePixel = 0,
+                    BorderSizePixel = 2,
                     CanvasSize = UDim2New(0, 0, 0, 0)
                 })  Items["RealListbox"]:AddToTheme({ScrollBarImageColor3 = "Accent", BackgroundColor3 = "Background", BorderColor3 = "Border"})
-
-                    Instances:Create("UICorner", {
-
-                        Parent = Items["RealListbox"].Instance,
-
-                        CornerRadius = UDimNew(0, 2)
-
-                    })
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["RealListbox"].Instance,
                     Color = FromRGB(27, 27, 32),
                     Name = "\0",
-                    ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border
                 }):AddToTheme({Color = "Outline"}) 
                 
                 Instances:Create("UIListLayout", {
@@ -4946,7 +4772,7 @@
 
                 Instances:Create("UIStroke", {
                     Parent = OptionText.Instance,
-                    LineJoinMode = Enum.LineJoinMode.Round,
+                    LineJoinMode = Enum.LineJoinMode.Miter,
                     Name = "\0"
                 }):AddToTheme({Color = "Text Border"})
 
