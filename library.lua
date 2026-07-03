@@ -3513,7 +3513,7 @@
                 
                 Instances:Create("UICorner", {
                     Parent = Items["Indicator"].Instance,
-                    CornerRadius = UDimNew(0, 1)
+                    CornerRadius = UDimNew(0, 0)
                 })
                 Instances:Create("UIStroke", {
                     Parent = Items["Indicator"].Instance,
