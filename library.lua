@@ -2271,7 +2271,7 @@
                 Items["AccentBorder"] = Instances:Create("UIStroke", {
                     Parent = Items["MainFrame"].Instance,
                     ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
-                    LineJoinMode = Enum.LineJoinMode.Miter,
+                    LineJoinMode = Enum.LineJoinMode.Round,
                     Name = "\0",
                     Color = FromRGB(235, 157, 255)
                 })  Items["AccentBorder"]:AddToTheme({Color = "Accent"})
@@ -2315,7 +2315,7 @@
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Inline"].Instance,
-                    LineJoinMode = Enum.LineJoinMode.Miter,
+                    LineJoinMode = Enum.LineJoinMode.Round,
                     ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
                     Color = Library.Theme.Border,
                     Name = "\0"
