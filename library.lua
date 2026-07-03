@@ -3506,14 +3506,14 @@
                     Parent = Items["Toggle"].Instance,
                     Name = "\0",
                     BorderColor3 = FromRGB(10, 10, 10),
-                    Size = UDim2New(0, 15, 0, 15),
+                    Size = UDim2New(0, 10, 0, 10),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["Indicator"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})
                 
                 Instances:Create("UICorner", {
                     Parent = Items["Indicator"].Instance,
-                    CornerRadius = UDimNew(0, 3)
+                    CornerRadius = UDimNew(0, 2)
                 })
                 Instances:Create("UIStroke", {
                     Parent = Items["Indicator"].Instance,
