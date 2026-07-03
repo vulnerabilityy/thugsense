@@ -2257,6 +2257,11 @@
                     BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["MainFrame"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
+                
+                Instances:Create("UICorner", {
+                    Parent = Items["MainFrame"].Instance,
+                    CornerRadius = UDimNew(0, 6)
+                })
 
                 Items["MainFrame"].Instance.Position = UDim2New(0, Camera.ViewportSize.X / 4, 0, Camera.ViewportSize.Y / 4)
 
@@ -2302,6 +2307,11 @@
                     BorderSizePixel = 2,
                     BackgroundColor3 = FromRGB(20, 20, 25)
                 })  Items["Inline"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Outline"})
+                
+                Instances:Create("UICorner", {
+                    Parent = Items["Inline"].Instance,
+                    CornerRadius = UDimNew(0, 4)
+                })
                 
                 Instances:Create("UIStroke", {
                     Parent = Items["Inline"].Instance,
