@@ -2254,7 +2254,7 @@
                     Position = UDim2New(0, 0, 0, 0),
                     BorderColor3 = FromRGB(10, 10, 10),
                     Size = Window.Size,
-                    BorderSizePixel = 2,
+                    BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["MainFrame"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
                 
@@ -2304,7 +2304,7 @@
                     Position = UDim2New(0, 7, 0, 20),
                     BorderColor3 = FromRGB(27, 27, 32),
                     Size = UDim2New(1, -14, 1, -27),
-                    BorderSizePixel = 2,
+                    BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(20, 20, 25)
                 })  Items["Inline"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Outline"})
                 
