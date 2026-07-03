@@ -2524,7 +2524,7 @@
                     AnchorPoint = Vector2New(0, 1),
                     Name = "\0",
                     Position = UDim2New(0, 0, 1, 0),
-                    Size = UDim2New(1, 0, 0, 3),
+                    Size = UDim2New(1, 0, 0, 4),
                     ZIndex = 2,
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(15, 15, 20)
@@ -3175,7 +3175,7 @@
                         AnchorPoint = Vector2New(0, 1),
                         Name = "\0",
                         Position = UDim2New(0, 0, 1, 0),
-                        Size = UDim2New(1, 0, 0, 3),
+                        Size = UDim2New(1, 0, 0, 4),
                         ZIndex = 2,
                         BorderSizePixel = 0,
                         BackgroundColor3 = FromRGB(15, 15, 20)
@@ -3437,7 +3437,7 @@
                     BackgroundTransparency = 1,
                     Name = "\0",
                     BorderColor3 = FromRGB(0, 0, 0),
-                    Size = UDim2New(1, 0, 0, 10),
+                    Size = UDim2New(1, 0, 0, 12),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(255, 255, 255)
                 }) 
@@ -3448,7 +3448,7 @@
                     Name = "\0",
                     Position = UDim2New(0, 0, 0.5, 0),
                     BorderColor3 = FromRGB(10, 10, 10),
-                    Size = UDim2New(1, 0, 0, 3),
+                    Size = UDim2New(1, 0, 0, 4),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(15, 15, 20)
                 })  Items["RealDivider"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})
@@ -3506,7 +3506,7 @@
                     Parent = Items["Toggle"].Instance,
                     Name = "\0",
                     BorderColor3 = FromRGB(10, 10, 10),
-                    Size = UDim2New(0, 10, 0, 10),
+                    Size = UDim2New(0, 12, 0, 12),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["Indicator"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})                
@@ -3532,7 +3532,7 @@
                     Text = Toggle.Name,
                     Name = "\0",
                     Size = UDim2New(1, 0, 1, 0),
-                    Position = UDim2New(0, 18, 0, -1),
+                    Position = UDim2New(0, 20, 0, -1),
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     BorderSizePixel = 0,
@@ -3832,7 +3832,7 @@
                     BorderColor3 = FromRGB(10, 10, 10),
                     Text = "",
                     AutoButtonColor = false,
-                    Size = UDim2New(1, 0, 0, 10),
+                    Size = UDim2New(1, 0, 0, 12),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["RealSlider"]:AddToTheme({BackgroundColor3 = "Background", BorderColor3 = "Border"})                
