@@ -3506,7 +3506,7 @@
                     Parent = Items["Toggle"].Instance,
                     Name = "\0",
                     BorderColor3 = FromRGB(10, 10, 10),
-                    Size = UDim2New(0, 12, 0, 12),
+                    Size = UDim2New(0, 16, 0, 16),
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(33, 33, 36)
                 })  Items["Indicator"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})                
@@ -3532,7 +3532,7 @@
                     Text = Toggle.Name,
                     Name = "\0",
                     Size = UDim2New(1, 0, 1, 0),
-                    Position = UDim2New(0, 20, 0, -1),
+                    Position = UDim2New(0, 24, 0, -1),
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     BorderSizePixel = 0,
