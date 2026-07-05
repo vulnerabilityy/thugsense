@@ -515,6 +515,7 @@
                 local Dragging = false 
                 local DragStart
                 local StartPosition 
+                local dragConn
 
                 local Set = LPH_NO_VIRTUALIZE(function(Input)
                     local DragDelta = Input.Position - DragStart
@@ -527,22 +528,28 @@
 
                         DragStart = Input.Position
                         StartPosition = Gui.Position
+
+                        if not dragConn then
+                            dragConn = Library:Connect(UserInputService.InputChanged, LPH_NO_VIRTUALIZE(function(Input)
+                                if Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch then
+                                    if Dragging then
+                                        Set(Input)
+                                    end
+                                end
+                            end))
+                        end
                     end
                 end)
 
                 self:Connect("InputEnded", function(Input)
                     if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
                         Dragging = false
-                    end
-                end)
-
-                Library:Connect(UserInputService.InputChanged, LPH_NO_VIRTUALIZE(function(Input)
-                    if Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch then
-                        if Dragging then
-                            Set(Input)
+                        if dragConn then
+                            dragConn.Connection:Disconnect()
+                            dragConn = nil
                         end
                     end
-                end))
+                end)
 
                 return Dragging
             end
@@ -558,6 +565,7 @@
                 local Start = UDim2New()
                 local Delta = UDim2New()
                 local ResizeMax = Gui.Parent.AbsoluteSize - Gui.AbsoluteSize
+                local resizeConn
 
                 local ResizeButton = Instances:Create("TextButton", {
                     Parent = Gui,
@@ -578,25 +586,31 @@
                         Resizing = true
 
                         Start = Gui.Size - UDim2New(0, Input.Position.X, 0, Input.Position.Y)
+
+                        if not resizeConn then
+                            resizeConn = Library:Connect(UserInputService.InputChanged, LPH_NO_VIRTUALIZE(function(Input)
+                                if Input.UserInputType == Enum.UserInputType.MouseMovement and Resizing then
+                                    ResizeMax = Maximum or Gui.Parent.AbsoluteSize - Gui.AbsoluteSize
+
+                                    Delta = Start + UDim2New(0, Input.Position.X, 0, Input.Position.Y)
+                                    Delta = UDim2New(0, math.clamp(Delta.X.Offset, Minimum.X, ResizeMax.X), 0, math.clamp(Delta.Y.Offset, Minimum.Y, ResizeMax.Y))
+
+                                    Tween:Create(Gui, TweenInfo.new(0.17, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = Delta}, true)
+                                end
+                            end))
+                        end
                     end
                 end)
 
                 ResizeButton:Connect("InputEnded", function(Input)
                     if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
                         Resizing = false
+                        if resizeConn then
+                            resizeConn.Connection:Disconnect()
+                            resizeConn = nil
+                        end
                     end
                 end)
-
-                Library:Connect(UserInputService.InputChanged, LPH_NO_VIRTUALIZE(function(Input)
-                    if Input.UserInputType == Enum.UserInputType.MouseMovement and Resizing then
-                        ResizeMax = Maximum or Gui.Parent.AbsoluteSize - Gui.AbsoluteSize
-
-                        Delta = Start + UDim2New(0, Input.Position.X, 0, Input.Position.Y)
-                        Delta = UDim2New(0, math.clamp(Delta.X.Offset, Minimum.X, ResizeMax.X), 0, math.clamp(Delta.Y.Offset, Minimum.Y, ResizeMax.Y))
-
-                        Tween:Create(Gui, TweenInfo.new(0.17, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = Delta}, true)
-                    end
-                end))
 
                 return Resizing
             end
@@ -1749,16 +1763,39 @@
                 Colorpicker:SetOpen(not Colorpicker.IsOpen)
             end)
 
+            local colorpickerConn
+
+            local function UpdateInputChanged()
+                if SlidingPalette or SlidingHue or SlidingAlpha then
+                    if not colorpickerConn then
+                        colorpickerConn = Library:Connect(UserInputService.InputChanged, LPH_NO_VIRTUALIZE(function(Input)
+                            if Input.UserInputType == Enum.UserInputType.MouseMovement then
+                                if SlidingPalette then Colorpicker:SlidePalette(Input) end
+                                if SlidingHue then Colorpicker:SlideHue(Input) end
+                                if SlidingAlpha then Colorpicker:SlideAlpha(Input) end
+                            end
+                        end))
+                    end
+                else
+                    if colorpickerConn then
+                        colorpickerConn.Connection:Disconnect()
+                        colorpickerConn = nil
+                    end
+                end
+            end
+
             Items["Palette"]:Connect("InputBegan", function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                     SlidingPalette = true
                     Colorpicker:SlidePalette(Input)
+                    UpdateInputChanged()
                 end
             end)
 
             Items["Palette"]:Connect("InputEnded", function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                     SlidingPalette = false
+                    UpdateInputChanged()
                 end
             end)
 
@@ -1766,12 +1803,14 @@
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                     SlidingHue = true
                     Colorpicker:SlideHue(Input)
+                    UpdateInputChanged()
                 end
             end)
 
             Items["Hue"]:Connect("InputEnded", function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                     SlidingHue = false
+                    UpdateInputChanged()
                 end
             end)
 
@@ -1779,30 +1818,16 @@
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                     SlidingAlpha = true
                     Colorpicker:SlideAlpha(Input)
+                    UpdateInputChanged()
                 end
             end)
 
             Items["Alpha"]:Connect("InputEnded", function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                     SlidingAlpha = false
+                    UpdateInputChanged()
                 end
             end)
-
-            Library:Connect(UserInputService.InputChanged, LPH_NO_VIRTUALIZE(function(Input)
-                if Input.UserInputType == Enum.UserInputType.MouseMovement then
-                    if SlidingPalette then
-                        Colorpicker:SlidePalette(Input)
-                    end
-
-                    if SlidingHue then
-                        Colorpicker:SlideHue(Input)
-                    end
-
-                    if SlidingAlpha then
-                        Colorpicker:SlideAlpha(Input)
-                    end
-                end
-            end))
 
             Library:Connect(UserInputService.InputBegan, LPH_NO_VIRTUALIZE(function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -3806,6 +3831,7 @@
                 Items["Slider"].Instance.Visible = Bool
             end
 
+            local sliderConn
             Items["RealSlider"]:Connect("MouseButton1Down", function()
                 Slider.Sliding = true
 
@@ -3815,24 +3841,30 @@
                 local Value = ((Slider.Max - Slider.Min) * SizeX) + Slider.Min
 
                 Slider:Set(Value)
+
+                if not sliderConn then
+                    sliderConn = Library:Connect(UserInputService.InputChanged, LPH_NO_VIRTUALIZE(function(Input)
+                        if Input.UserInputType == Enum.UserInputType.MouseMovement and Slider.Sliding then
+                            local MousePos2 = UserInputService:GetMouseLocation()
+
+                            local SizeX2 = (MousePos2.X - Items["RealSlider"].Instance.AbsolutePosition.X) / Items["RealSlider"].Instance.AbsoluteSize.X
+                            local Value2 = ((Slider.Max - Slider.Min) * SizeX2) + Slider.Min
+
+                            Slider:Set(Value2)
+                        end
+                    end))
+                end
             end)
 
             Items["RealSlider"]:Connect("InputEnded", function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                     Slider.Sliding = false
+                    if sliderConn then
+                        sliderConn.Connection:Disconnect()
+                        sliderConn = nil
+                    end
                 end
             end)
-
-            Library:Connect(UserInputService.InputChanged, LPH_NO_VIRTUALIZE(function(Input)
-                if Input.UserInputType == Enum.UserInputType.MouseMovement and Slider.Sliding then
-                    local MousePos = UserInputService:GetMouseLocation()
-
-                    local SizeX = (MousePos.X - Items["RealSlider"].Instance.AbsolutePosition.X) / Items["RealSlider"].Instance.AbsoluteSize.X
-                    local Value = ((Slider.Max - Slider.Min) * SizeX) + Slider.Min
-
-                    Slider:Set(Value)
-                end
-            end))
 
             if Slider.Default then
                 Slider:Set(Slider.Default)
