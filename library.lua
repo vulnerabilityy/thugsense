@@ -831,11 +831,11 @@
             local Success, Result = Library:SafeCall(function()
                 for Index, Value in Library.Flags do 
                     if type(Value) == "table" and Value.Key then
-                        Config[Index] = {Key = tostring(Value.Key), Mode = Value.Mode}
+                        Config[Index] = {v = {Key = tostring(Value.Key), Mode = Value.Mode}}
                     elseif type(Value) == "table" and Value.Color then
-                        Config[Index] = {Color = "#" .. Value.HexValue, Alpha = Value.Alpha}
+                        Config[Index] = {v = {Color = "#" .. Value.HexValue, Alpha = Value.Alpha}}
                     else
-                        Config[Index] = Value
+                        Config[Index] = {v = Value}
                     end
                 end
             end)
@@ -846,9 +846,29 @@
         Library.LoadConfig = function(self, Config)
             local Decoded = HttpService:JSONDecode(Config)
 
+            local isNewFormat = false
+            for _, Entry in Decoded do
+                if type(Entry) == "table" and Entry.v ~= nil then
+                    isNewFormat = true
+                    break
+                end
+            end
+
+            if not isNewFormat then
+                Library:Notification("Incompatible config format", 5, Color3.fromRGB(255, 50, 50))
+                return
+            end
+
+            local Unwrapped = { }
+            for Index, Entry in Decoded do
+                if type(Entry) == "table" and Entry.v ~= nil then
+                    Unwrapped[Index] = Entry.v
+                end
+            end
+
             Library:SafeCall(function()
                 for Flag, SetFunction in Library.SetFlags do
-                    if Decoded[Flag] == nil then
+                    if Unwrapped[Flag] == nil then
                         local CurrentValue = Library.Flags[Flag]
                         if type(CurrentValue) == "boolean" then
                             SetFunction(false)
@@ -868,7 +888,7 @@
             end)
 
             local Success, Result = Library:SafeCall(function()
-                for Index, Value in Decoded do 
+                for Index, Value in Unwrapped do 
                     if type(Value) == "table" and Value.Color then
                         local SetFunction = Library.SetFlags[Index]
                         if SetFunction then
@@ -877,7 +897,7 @@
                     end
                 end
 
-                for Index, Value in Decoded do 
+                for Index, Value in Unwrapped do 
                     if type(Value) == "table" and Value.Color then
                         continue
                     end
