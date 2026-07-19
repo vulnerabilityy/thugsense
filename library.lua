@@ -855,7 +855,7 @@
             end
 
             if not isNewFormat then
-                Library:Notification("Incompatible config format", 5, Color3.fromRGB(255, 50, 50))
+                Library:Notification("This config has been invalidated. Please make a new one.", 5, Color3.fromRGB(255, 50, 50))
                 return
             end
 
