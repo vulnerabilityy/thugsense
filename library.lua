@@ -242,6 +242,7 @@
             ThemeItems = { },
 
             SetFlags = { },
+            DependencyMap = { },
 
             UnnamedConnections = 0,
             UnnamedFlags = 0,
@@ -805,6 +806,36 @@
         Library.NextFlag = function(self)
             self.UnnamedFlags = self.UnnamedFlags + 1
             return StringFormat("Flag Number %s %s", self.UnnamedFlags, HttpService:GenerateGUID(false))
+        end
+
+        Library.RegisterDependency = function(self, Flag, Element)
+            if not self.DependencyMap[Flag] then
+                self.DependencyMap[Flag] = { }
+            end
+            TableInsert(self.DependencyMap[Flag], Element)
+            local val = self.Flags[Flag]
+            if val ~= nil then
+                local visible = val and true or false
+                if Element.SetVisibility then
+                    Element:SetVisibility(visible)
+                elseif Element.SetVisiblity then
+                    Element:SetVisiblity(visible)
+                end
+            end
+        end
+
+        Library.UpdateDependents = function(self, Flag)
+            local deps = self.DependencyMap[Flag]
+            if not deps then return end
+            local val = self.Flags[Flag]
+            local visible = val and true or false
+            for _, Element in deps do
+                if Element.SetVisibility then
+                    Element:SetVisibility(visible)
+                elseif Element.SetVisiblity then
+                    Element:SetVisiblity(visible)
+                end
+            end
         end
 
         Library.AddToTheme = function(self, Item, Properties)
@@ -3388,6 +3419,8 @@
                 Items["Divider"].Instance.Visible = Bool
             end
 
+            if Data.Dependency then Library:RegisterDependency(Data.Dependency, Divider) end
+
             return Divider
         end
 
@@ -3515,6 +3548,8 @@
                 if Toggle.Callback then 
                     Library:SafeCall(Toggle.Callback, Toggle.Value)
                 end
+
+                Library:UpdateDependents(Toggle.Flag)
             end
 
             function Toggle:SetVisiblity(Bool)
@@ -3581,6 +3616,8 @@
             Library.SetFlags[Toggle.Flag] = function(Value)
                 Toggle:Set(Value)
             end
+
+            if Data.Dependency then Library:RegisterDependency(Data.Dependency, Toggle) end
 
             return Toggle
         end
@@ -3682,6 +3719,8 @@
             Items["Button"]:Connect("MouseButton1Down", function()
                 Button:Press()
             end)
+
+            if Data.Dependency then Library:RegisterDependency(Data.Dependency, Button) end
 
             return Button
         end
@@ -3893,6 +3932,8 @@
             Library.SetFlags[Slider.Flag] = function(Value)
                 Slider:Set(Value)
             end
+
+            if Data.Dependency then Library:RegisterDependency(Data.Dependency, Slider) end
 
             return Slider
         end
@@ -4320,6 +4361,8 @@
                 Dropdown:Set(Value)            
             end
 
+            if Data.Dependency then Library:RegisterDependency(Data.Dependency, Dropdown) end
+
             return Dropdown
         end
 
@@ -4577,6 +4620,8 @@
             Library.SetFlags[Textbox.Flag] = function(Value)
                 Textbox:Set(Value)
             end
+
+            if Data.Dependency then Library:RegisterDependency(Data.Dependency, Textbox) end
 
             return Textbox
         end
@@ -4903,6 +4948,8 @@
             Library.SetFlags[Listbox.Flag] = function(Value)
                 Listbox:Set(Value)
             end
+
+            if Data.Dependency then Library:RegisterDependency(Data.Dependency, Listbox) end
 
             return Listbox
         end
