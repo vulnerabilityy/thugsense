@@ -814,13 +814,11 @@
             end
             TableInsert(self.DependencyMap[Flag], Element)
             local val = self.Flags[Flag]
-            if val ~= nil then
-                local visible = val and true or false
-                if Element.SetVisibility then
-                    Element:SetVisibility(visible)
-                elseif Element.SetVisiblity then
-                    Element:SetVisiblity(visible)
-                end
+            local visible = (val == true)
+            if Element.SetVisibility then
+                Element:SetVisibility(visible)
+            elseif Element.SetVisiblity then
+                Element:SetVisiblity(visible)
             end
         end
 
